@@ -47,11 +47,5 @@ return {
             "diagnostics",
             "fancy_macro",
         }
-        opts.lualine_c = {
-            {
-                "lsp_progress",
-                spinner_symbols = { " ", " ", " ", " ", " ", " " },
-            },
-        }
     end,
 }
