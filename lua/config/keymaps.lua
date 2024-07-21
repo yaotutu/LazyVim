@@ -1,6 +1,3 @@
--- Keymaps are automatically loaded on the VeryLazy event
--- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
--- Add any additional keymaps here
 -- disable default keymap
 -- 删除普通模式和终端模式下的 <C-h> 映射
 vim.keymap.del({ 'n', 't' }, '<C-h>')
@@ -25,5 +22,9 @@ vim.keymap.set("n", "<A-j>", "<C-w>j", { noremap = true, silent = true, desc = "
 vim.keymap.set("n", "<A-k>", "<C-w>k", { noremap = true, silent = true, desc = "Go to Upper Window" })
 vim.keymap.set("n", "<A-l>", "<C-w>l", { noremap = true, silent = true, desc = "Go to Right Window" })
 
+vim.keymap.set("n", "q", "<Nop>", { silent = true })
 
-vim.api.nvim_set_keymap("n", "q", "<Nop>", { silent = true })
+
+-- 切换窗口
+vim.keymap.set("n", "<leader>ww", "<cmd>lua require('nvim-window').pick()<CR>",
+    { noremap = true, silent = true, desc = "Pick Window" })
