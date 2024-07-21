@@ -40,3 +40,19 @@ vim.keymap.set("n", "<leader>p", [["*p]],
     { noremap = true, silent = true, desc = "Paste from system clipboard (normal)" })
 vim.keymap.set("n", "<leader>P", [["*P]],
     { noremap = true, silent = true, desc = "Paste before from system clipboard (normal)" })
+
+
+-- 垂直分割终端
+vim.keymap.set("n", "<Leader>t-", ":ToggleTerm direction=vertical<CR>",
+    { noremap = true, silent = true, desc = "Toggle Vertical Terminal" })
+-- 水平分割终端
+vim.keymap.set("n", "<Leader>tt", ":ToggleTerm 1 direction=horizontal<CR>",
+    { noremap = true, silent = true, desc = "Toggle Horizontal Terminal" })
+-- 打开特定终端
+vim.keymap.set("n", "<Leader>t1", ":ToggleTerm 1<CR>", { noremap = true, silent = true, desc = "Toggle Terminal 1" })
+vim.keymap.set("n", "<Leader>t2", ":ToggleTerm 2<CR>", { noremap = true, silent = true, desc = "Toggle Terminal 2" })
+vim.keymap.set("n", "<Leader>t3", ":ToggleTerm 3<CR>", { noremap = true, silent = true, desc = "Toggle Terminal 3" })
+vim.keymap.set("n", "<Leader>t4", ":ToggleTerm 4<CR>", { noremap = true, silent = true, desc = "Toggle Terminal 4" })
+-- 浮动终端
+vim.keymap.set("n", "<leader>tf", ":ToggleTerm 9 direction=float<CR>",
+    { noremap = true, silent = true, desc = "Toggle Float Terminal" })
