@@ -28,3 +28,15 @@ vim.keymap.set("n", "q", "<Nop>", { silent = true })
 -- 切换窗口
 vim.keymap.set("n", "<leader>ww", "<cmd>lua require('nvim-window').pick()<CR>",
     { noremap = true, silent = true, desc = "Pick Window" })
+
+-- System clipboard
+vim.keymap.set("v", "<leader>y", [["*y]], { noremap = true, silent = true, desc = "Yank to system clipboard (visual)" })
+vim.keymap.set("n", "<leader>y", [["*y]], { noremap = true, silent = true, desc = "Yank to system clipboard (normal)" })
+vim.keymap.set("n", "<leader>Y", [["*Y]],
+    { noremap = true, silent = true, desc = "Yank line to system clipboard (normal)" })
+vim.keymap.set("v", "<leader>p", [["*p]],
+    { noremap = true, silent = true, desc = "Paste from system clipboard (visual)" })
+vim.keymap.set("n", "<leader>p", [["*p]],
+    { noremap = true, silent = true, desc = "Paste from system clipboard (normal)" })
+vim.keymap.set("n", "<leader>P", [["*P]],
+    { noremap = true, silent = true, desc = "Paste before from system clipboard (normal)" })
