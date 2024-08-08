@@ -13,10 +13,6 @@ return {
         behavior = cmp.ConfirmBehavior.Replace,
         select = true,
       }),
-      ["<Tab>"] = cmp.mapping.confirm({ select = true }),
-      ["<CR>"] = cmp.mapping(function(fallback)
-        fallback() -- 始终执行默认回车行为
-      end, { "i", "s" }),
     })
   end,
 }

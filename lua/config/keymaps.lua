@@ -16,12 +16,30 @@ vim.keymap.del("n", "<S-h>")
 -- 删除普通模式下的 <S-l> 映射
 vim.keymap.del("n", "<S-l>")
 
+-- 加速的 j 和 k 键映射，带有描述信息
+vim.keymap.set("n", "j", "<Plug>(accelerated_jk_gj)", { noremap = true, silent = true, desc = "Accelerated Down" })
+vim.keymap.set("n", "k", "<Plug>(accelerated_jk_gk)", { noremap = true, silent = true, desc = "Accelerated Up" })
+
 -- alt + hjkl 窗口之间跳转，添加描述信息以便 which-key 使用
 vim.keymap.set("n", "<A-h>", "<C-w>h", { noremap = true, silent = true, desc = "Go to Left Window" })
 vim.keymap.set("n", "<A-j>", "<C-w>j", { noremap = true, silent = true, desc = "Go to Lower Window" })
 vim.keymap.set("n", "<A-k>", "<C-w>k", { noremap = true, silent = true, desc = "Go to Upper Window" })
 vim.keymap.set("n", "<A-l>", "<C-w>l", { noremap = true, silent = true, desc = "Go to Right Window" })
 
+vim.keymap.set("v", "J", ":move '>+1<CR>gv-gv", { noremap = true, silent = true, desc = "Move selected lines down" })
+vim.keymap.set("v", "K", ":move '<-2<CR>gv-gv", { noremap = true, silent = true, desc = "Move selected lines up" })
+
+-- 上下滚动浏览
+vim.keymap.set("n", "<C-j>", "5j", { noremap = true, silent = true, desc = "Scroll down 5 lines" })
+vim.keymap.set("n", "<C-k>", "5k", { noremap = true, silent = true, desc = "Scroll up 5 lines" })
+vim.keymap.set("v", "<C-j>", "5j", { noremap = true, silent = true, desc = "Scroll down 5 lines in visual mode" })
+vim.keymap.set("v", "<C-k>", "5k", { noremap = true, silent = true, desc = "Scroll up 5 lines in visual mode" })
+
+-- Ctrl+u / Ctrl+d 只移动 10 行，默认移动半屏
+vim.keymap.set("n", "<C-u>", "10k", { noremap = true, silent = true, desc = "Move up 10 lines" })
+vim.keymap.set("n", "<C-d>", "10j", { noremap = true, silent = true, desc = "Move down 10 lines" })
+
+-- disable q key
 vim.keymap.set("n", "q", "<Nop>", { silent = true })
 
 -- 切换窗口
